@@ -8,7 +8,13 @@ Server side and Database system creation got Hack Reactors SDC sprint. This repo
 ```bash
 brew install postgressql
 ```
-
+## Dependencies
+Axios
+ESLint
+Express
+Nodemon
+PG
+Underscore
 
 ## Usage
 
