@@ -1,19 +1,29 @@
 # Product-Overview
 Server side and Database system creation got Hack Reactors SDC sprint. This repository is one part of the entire system and utilizes other repos.
 
+[Project Atelier System Design Main Repo](https://github.com/Project-Atelier-System-Design "Project-Atelier-System-Design")
 
 ## Installation
+
+```bash
+pip install foobar
+```
 
 
 ## Usage
 
+```python
+import foobar
 
-## Contributing
+# returns 'words'
+foobar.pluralize('word')
 
+# returns 'geese'
+foobar.pluralize('goose')
 
-## License
-HACK REACTOR
-
+# returns 'phenomenon'
+foobar.singularize('phenomena')
+```
 
 
 
