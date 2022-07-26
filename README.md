@@ -20,6 +20,13 @@ psql postgres    // Enter shell
 brew services stop postgresql   // Stop PostgreSQL
 ```
 
+If ```ERROR: Formula `postgreqsql is not installed``` try the following on Mac
+
+```
+$ brew update
+$ brew doctor
+$ brew install postgres
+```
 
 
 [I'm an inline-style link](https://www.google.com)
