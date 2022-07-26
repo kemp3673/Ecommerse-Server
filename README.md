@@ -9,12 +9,7 @@ Server side and Database system creation got Hack Reactors SDC sprint. This repo
 brew install postgressql
 ```
 ## Dependencies
-Axios
-ESLint
-Express
-Nodemon
-PG
-Underscore
+Axios, ESLint, Express, Nodemon, PG, Underscore
 
 ## Usage
 
