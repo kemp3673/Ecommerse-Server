@@ -16,6 +16,8 @@ brew install postgressql
 brew services start postgresql    // To Start PostgreSQL 
 
 psql postgres    // Enter shell 
+
+brew services stop postgresql   // Stop PostgreSQL
 ```
 
 
