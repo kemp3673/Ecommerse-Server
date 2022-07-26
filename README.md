@@ -6,23 +6,16 @@ Server side and Database system creation got Hack Reactors SDC sprint. This repo
 ## Installation
 
 ```bash
-pip install foobar
+brew install postgressql
 ```
 
 
 ## Usage
 
-```python
-import foobar
+```bash
+brew services start postgresql    // To Start PostgreSQL 
 
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+psql postgres    // Enter shell 
 ```
 
 
