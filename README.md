@@ -69,6 +69,14 @@ brew install postgressql
         REFERENCES styles(ID)
   );
   ```
+  ###COPY DATA TO TABLES
+  ```
+  COPY product(id, name, slogan, description, category, default_price)
+  FROM '/Users/nicholaskempkes/repositories/Server Design Capstone/Product-Overview/csv_files/product.csv'
+  DELIMITER ','
+  CSV HEADER;
+  
+  ```
   
 ## Dependencies
 Axios, ESLint, Express, Nodemon, PG, Underscore
