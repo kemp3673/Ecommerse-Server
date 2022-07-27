@@ -1,5 +1,5 @@
 # Product-Overview
-Server side and Database system creation got Hack Reactors SDC sprint. This repository is one part of the entire system and utilizes other repos.
+Server side and Database system creation for Hack Reactors SDC sprint. This repository is one part of the entire system and utilizes other repos.
 
 [Project Atelier System Design Main Repo](https://github.com/Project-Atelier-System-Design "Project-Atelier-System-Design")
 
