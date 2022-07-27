@@ -89,6 +89,8 @@ brew services start postgresql    // To Start PostgreSQL
 psql postgres    // Enter shell 
 
 brew services stop postgresql   // Stop PostgreSQL
+
+psql postgres < shcema.sql       // Run inside repo folder in terminal to create DB and tables
 ```
 
 If ```ERROR: Formula `postgreqsql is not installed``` try the following on Mac
