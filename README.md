@@ -22,9 +22,9 @@ brew install postgressql
     slogan VARCHAR,
     description VARCHAR,
     category VARCHAR,
-    default_price INTEGER);
-
-  
+    default_price INTEGER),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW();
   ```
   
 ## Dependencies
