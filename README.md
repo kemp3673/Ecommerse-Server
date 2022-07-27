@@ -31,7 +31,7 @@ brew install postgressql
     ID INTEGER PRIMARY KEY,
     productID INTEGER NOT NULL,
     name VARCHAR NOT NULL,
-    sale_price INTEGER NOT NULL,
+    sale_price INTEGER,
     original_price INTEGER NOT NULL,
     default_style BOOLEAN NOT NULL,
     CONSTRAINT fk_product
