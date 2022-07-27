@@ -59,6 +59,15 @@ brew install postgressql
         REFERENCES product(ID)
   );
   
+  CREATE TABLE photos (
+    ID INTEGER PRIMARY KEY,
+    styleID INTEGER NOT NULL,
+    url VARCHAR NOT NULL,
+    thumbnail_url VARCHAR NOT NULL,
+    CONSTRAINT fk_styles
+      FOREIGN KEY(styleID)
+        REFERENCES styles(ID)
+  );
   ```
   
 ## Dependencies
