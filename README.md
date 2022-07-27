@@ -39,6 +39,16 @@ brew install postgressql
         REFERENCES product(ID)
   );
   
+  CREATE TABLE skus (
+    ID INTEGER PRIMARY KEY,
+    styleID INTEGER NOT NULL,
+    size VARCHAR(10) NOT NULL,
+    quantity INTEGER NOT NULL,
+    CONSTRAINT fk_product
+      FOREIGN KEY(styleID)
+        REFERENCES product(ID)
+  );
+  
   
   
   ```
