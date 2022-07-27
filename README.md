@@ -94,7 +94,7 @@ $ brew install postgres
 ```
 \list  // Displays table of DBs
 
-\c 
+\c dbname    // change DB
 
 \dt    // Displays tables in DB
 
