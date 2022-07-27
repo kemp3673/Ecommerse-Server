@@ -94,6 +94,8 @@ $ brew install postgres
 ```
 \list  // Displays table of DBs
 
+\c 
+
 \dt    // Displays tables in DB
 
 SELECT * FROM product;  // Displays all contents of specified (product) table
