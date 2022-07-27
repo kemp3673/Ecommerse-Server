@@ -98,6 +98,8 @@ $ brew install postgres
 
 \dt    // Displays tables in DB
 
+\x on    // Extended display on, makes easier to see table data
+
 SELECT * FROM product;  // Displays all contents of specified (product) table
 ```
 
