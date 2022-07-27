@@ -24,7 +24,7 @@ brew install postgressql
     category VARCHAR NOT NULL,
     default_price INTEGER NOT NULL,
     created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
   );
   
   CREATE TABLE styles (
