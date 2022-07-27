@@ -8,6 +8,25 @@ Server side and Database system creation got Hack Reactors SDC sprint. This repo
 ```bash
 brew install postgressql
 ```
+
+  ### Create Database
+  ``` 
+  CREATE DATABASE products;
+  ```
+  
+  ### Create Tables
+  ```
+  CREATE TABLE product (
+    ID SERIAL PRIMARY KEY,
+    name VARCHAR,
+    slogan VARCHAR,
+    description VARCHAR,
+    category VARCHAR,
+    default_price INTEGER);
+
+  
+  ```
+  
 ## Dependencies
 Axios, ESLint, Express, Nodemon, PG, Underscore
 
@@ -27,6 +46,12 @@ If ```ERROR: Formula `postgreqsql is not installed``` try the following on Mac
 $ brew update
 $ brew doctor
 $ brew install postgres
+```
+
+```
+\list  // Displays table of DBs
+
+SELECT * FROM product;  // Displays all contents of specified (product) table
 ```
 
 
