@@ -17,14 +17,30 @@ brew install postgressql
   ### Create Tables
   ```
   CREATE TABLE product (
-    ID SERIAL PRIMARY KEY,
-    name VARCHAR,
-    slogan VARCHAR,
-    description VARCHAR,
-    category VARCHAR,
-    default_price INTEGER,
+    ID INTEGER PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    slogan VARCHAR NOT NULL,
+    description VARCHAR NOT NULL,
+    category VARCHAR NOT NULL,
+    default_price INTEGER NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW());
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  );
+  
+  CREATE TABLE styles (
+    ID INTEGER PRIMARY KEY,
+    productID INTEGER NOT NULL,
+    name VARCHAR NOT NULL,
+    sale_price INTEGER NOT NULL,
+    original_price INTEGER NOT NULL,
+    default_style BOOLEAN NOT NULL,
+    CONSTRAINT fk_product
+      FOREIGN KEY(productID)
+        REFERENCES product(ID)
+  );
+  
+  
+  
   ```
   
 ## Dependencies
