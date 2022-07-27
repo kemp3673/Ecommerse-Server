@@ -23,8 +23,8 @@ brew install postgressql
     description VARCHAR NOT NULL,
     category VARCHAR NOT NULL,
     default_price INTEGER NOT NULL,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
   );
   
   CREATE TABLE styles (
