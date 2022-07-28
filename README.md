@@ -8,6 +8,12 @@ Server side and Database system creation for Hack Reactors SDC sprint. This repo
 ```bash
 brew install postgressql
 ```
+Navigate into main repo folder
+```
+psql postgres < products.sql 
+```
+In order to launch database first time and populate it with csv data
+
 
   ### Create Database
   ``` 
