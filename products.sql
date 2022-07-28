@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 DROP DATABASE IF EXISTS products;
 
 CREATE DATABASE products;
@@ -57,6 +59,8 @@ CREATE TABLE product (
       FOREIGN KEY(styleID)
         REFERENCES styles(ID)
   );
+
+-- ETL --
 
 COPY product(id, name, slogan, description, category, default_price)
   FROM '/Users/nicholaskempkes/repositories/Server Design Capstone/Product-Overview/csv_files/product.csv'
