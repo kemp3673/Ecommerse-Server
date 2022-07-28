@@ -116,6 +116,8 @@ $ brew install postgres
 
 \x on    // Extended display on, makes easier to see table data
 
+\conninfo   // Get DB port number 
+
 SELECT * FROM product;  // Displays all contents of specified (product) table
 ```
 
