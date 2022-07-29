@@ -8,68 +8,12 @@ Server side and Database system creation for Hack Reactors SDC sprint. This repo
 ```bash
 brew install postgressql
 ```
+Navigate into main repo folder
+```
+psql postgres < products.sql 
+```
+In order to launch database first time and populate it with csv data
 
-  ### Create Database
-  ``` 
-  CREATE DATABASE products;
-  ```
-  
-  ### Create Tables
-  ```
-  CREATE TABLE product (
-    ID INTEGER PRIMARY KEY,
-    name VARCHAR NOT NULL,
-    slogan VARCHAR NOT NULL,
-    description VARCHAR NOT NULL,
-    category VARCHAR NOT NULL,
-    default_price INTEGER NOT NULL,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  );
-  
-  CREATE TABLE styles (
-    ID INTEGER PRIMARY KEY,
-    productID INTEGER NOT NULL,
-    name VARCHAR NOT NULL,
-    sale_price INTEGER,
-    original_price INTEGER NOT NULL,
-    default_style BOOLEAN NOT NULL,
-    CONSTRAINT fk_product
-      FOREIGN KEY(productID)
-        REFERENCES product(ID)
-  );
-  
-  CREATE TABLE skus (
-    ID INTEGER PRIMARY KEY,
-    productId INTEGER NOT NULL,
-    size VARCHAR(10) NOT NULL,
-    quantity INTEGER NOT NULL,
-    CONSTRAINT fk_product
-      FOREIGN KEY(productId)
-        REFERENCES product(ID)
-  );
-  
-  CREATE TABLE features (
-    ID INTEGER PRIMARY KEY,
-    product_id INTEGER NOT NULL,
-    feature VARCHAR NOT NULL,
-    value VARCHAR NOT NULL,
-    CONSTRAINT fk_product
-      FOREIGN KEY(product_id)
-        REFERENCES product(ID)
-  );
-  
-  CREATE TABLE photos (
-    ID INTEGER PRIMARY KEY,
-    styleID INTEGER NOT NULL,
-    url VARCHAR NOT NULL,
-    thumbnail_url VARCHAR NOT NULL,
-    CONSTRAINT fk_styles
-      FOREIGN KEY(styleID)
-        REFERENCES styles(ID)
-  );
-  ```
-  
 ## Dependencies
 Axios, ESLint, Express, Nodemon, PG, Underscore
 
