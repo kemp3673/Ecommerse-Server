@@ -1,4 +1,3 @@
-require('newrelic');
 const express = require("express");
 const path = require("path");
 const queries = require("../postgreSQL/db.js");
@@ -12,7 +11,7 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 //define routes
 app.get("/products", controllers.getList);
 app.get("/products/:productID", controllers.getOne);
-app.get("/styles", controllers.getStyles);
+app.get("/products/:productID/styles", controllers.getStyles);
 
 //define port
 const PORT = process.env.PORT || 3000;

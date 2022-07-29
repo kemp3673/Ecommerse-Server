@@ -3,22 +3,16 @@ const pool = require('../postgreSQL/db.js');
 
 
 module.exports = {
-  list: function (callback) {
+
+  list: () => {
     let limit = 5;
     console.log('\x1b[32m\x1b[1m', 'INDIVIDUAL MODEL')
-    pool.query(`SELECT * FROM product LIMIT 5;`,
-      function (err, data) {
-        if (err) {
-          callback(err.message);
-        } else {
-          callback(Object.values(JSON.parse(JSON.stringify(data))));
-        }
-      });
+    return pool.query(`SELECT * FROM product LIMIT 5;`)
   },
 
-  individual: function (callback) {
+  individual: (productID) => {
     console.log('\x1b[32m\x1b[1m', 'LIST MODEL')
-    pool.query(
+    return pool.query(
       `SELECT
       product.id,
       product.name,
@@ -38,19 +32,12 @@ module.exports = {
         ) item
       ) AS features
       FROM product
-      WHERE product.id = ${productID};`,
-      function (err, data) {
-        if (err) {
-          callback(err);
-        } else {
-          callback(Object.values(JSON.parse(JSON.stringify(data))));
-        }
-      });
-  },
+      WHERE product.id = ${productID};`)
+    },
 
-  styles: function (callback) {
+  styles: (productID) => {
     console.log('\x1b[32m\x1b[1m', 'STYLES MODEL')
-    pool.query(
+    return pool.query(
       `SELECT
         product.id AS product_id,
         (SELECT json_agg(item)
@@ -83,12 +70,6 @@ module.exports = {
         ) item
       ) AS results
       FROM product
-      WHERE product.id = ${productID};`, function (err, data) {
-        if (err) {
-          callback(err);
-        } else {
-          callback(Object.values(JSON.parse(JSON.stringify(data))));
-        }
-      });
+      WHERE product.id = ${productID};`)
   }
 }
