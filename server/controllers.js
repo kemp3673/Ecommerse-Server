@@ -1,23 +1,51 @@
 const Model = require("./model.js");
 
 
-const get = (req, res) => {
-  Model.getOne()
-  // .then((success) => {
-  //   res.status(200).send('GET WORKED')
-  // })
-  // .catch((error) => {
-  //   res.status(500).send('GET NO WORK-O');
-  // })
-};
-
-const post = (req, res) => {};
-
-  const put = (req, res) => {};
-
-
 module.exports = {
-  get,
-  post,
-  put,
-};
+
+  getOne: function (req, res) {
+    const urlTail = req.url;
+    console.log(urlTail);
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200);
+    Model.individual(function(err, data) {
+      if (err) {
+        throw err;
+      } else {
+        res.send(data);
+      }
+    });
+  },
+
+  getList: function (req, res) {
+    const urlTail = req.url;
+    console.log(urlTail);
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200);
+    Model.list(function(err, data) {
+      if (err) {
+        throw err;
+      } else {
+        res.send(data);
+      }
+    });
+  },
+
+
+  getStyles: function (req, res) {
+    const urlTail = req.url;
+    console.log(urlTail);
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200);
+    Model.styles(function(err, data) {
+      if (err) {
+        throw err;
+      } else {
+        res.send(data);
+      }
+    });
+  }
+
+}
+
+

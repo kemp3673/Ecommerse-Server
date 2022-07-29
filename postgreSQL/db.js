@@ -1,7 +1,6 @@
 require("dotenv").config();
 const Pool = require('pg').Pool
 
-console.log(process.env.DB_USER);
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -16,28 +15,4 @@ pool.connect()
 })
 .catch(err => console.error(err.message));
 
-// client.query(query, (err, res) => {
-//   if (err) {
-//       console.error(err);
-//       return;
-//   }
-//   console.log('Table is successfully created');
-//   client.end();
-// });
-
-
-
-// const query = `
-// INSERT INTO users (email, firstName, lastName, age)
-// VALUES ('johndoe@gmail.com', 'john', 'doe', 21)
-// `;
-
-// pool.query(query, (err, res) => {
-//   if (err) {
-//       console.error(err);
-//       return;
-//   }
-//   console.log('Data insert successful');
-//   pool.end();
-// });
-
+module.exports = pool;
