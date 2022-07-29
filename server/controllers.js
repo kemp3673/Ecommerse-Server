@@ -11,7 +11,7 @@ module.exports = {
   },
 
   getList: function (req, res) {
-    Model.list()
+    Model.list(req.query)
       .then((data) => res.status(200).send(data.rows))
       .catch((error) => res.status(500).send(error.stack));
   },

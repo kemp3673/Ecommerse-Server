@@ -1,17 +1,15 @@
-const axios = require('axios');
 const pool = require('../postgreSQL/db.js');
 
 
 module.exports = {
 
-  list: () => {
-    let limit = 5;
-    console.log('\x1b[32m\x1b[1m', 'INDIVIDUAL MODEL')
-    return pool.query(`SELECT * FROM product LIMIT 5;`)
+  list: (query) => {
+    let count = query.count || 5;
+    let page = (count * query.page) || 0;
+    return pool.query(`SELECT * FROM product LIMIT ${count} OFFSET ${page};`)
   },
 
   individual: (productID) => {
-    console.log('\x1b[32m\x1b[1m', 'LIST MODEL')
     return pool.query(
       `SELECT
       product.id,
@@ -36,7 +34,6 @@ module.exports = {
     },
 
   styles: (productID) => {
-    console.log('\x1b[32m\x1b[1m', 'STYLES MODEL')
     return pool.query(
       `SELECT
         product.id AS product_id,
