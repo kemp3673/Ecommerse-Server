@@ -14,20 +14,6 @@ psql postgres < products.sql
 ```
 In order to launch database first time and populate it with csv data
 
-
-  ### Create Database
-  ``` 
-  CREATE DATABASE products;
-  ```
-  ###COPY DATA TO TABLES
-  ```
-  COPY product(id, name, slogan, description, category, default_price)
-  FROM '/Users/nicholaskempkes/repositories/Server Design Capstone/Product-Overview/csv_files/product.csv'
-  DELIMITER ','
-  CSV HEADER;
-  
-  ```
-  
 ## Dependencies
 Axios, ESLint, Express, Nodemon, PG, Underscore
 
