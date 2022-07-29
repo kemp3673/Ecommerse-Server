@@ -19,62 +19,6 @@ In order to launch database first time and populate it with csv data
   ``` 
   CREATE DATABASE products;
   ```
-  
-  ### Create Tables
-  ```
-  CREATE TABLE product (
-    ID INTEGER PRIMARY KEY,
-    name VARCHAR NOT NULL,
-    slogan VARCHAR NOT NULL,
-    description VARCHAR NOT NULL,
-    category VARCHAR NOT NULL,
-    default_price INTEGER NOT NULL,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-  );
-  
-  CREATE TABLE styles (
-    ID INTEGER PRIMARY KEY,
-    productID INTEGER NOT NULL,
-    name VARCHAR NOT NULL,
-    sale_price INTEGER,
-    original_price INTEGER NOT NULL,
-    default_style BOOLEAN NOT NULL,
-    CONSTRAINT fk_product
-      FOREIGN KEY(productID)
-        REFERENCES product(ID)
-  );
-  
-  CREATE TABLE skus (
-    ID INTEGER PRIMARY KEY,
-    productId INTEGER NOT NULL,
-    size VARCHAR(10) NOT NULL,
-    quantity INTEGER NOT NULL,
-    CONSTRAINT fk_product
-      FOREIGN KEY(productId)
-        REFERENCES product(ID)
-  );
-  
-  CREATE TABLE features (
-    ID INTEGER PRIMARY KEY,
-    product_id INTEGER NOT NULL,
-    feature VARCHAR NOT NULL,
-    value VARCHAR NOT NULL,
-    CONSTRAINT fk_product
-      FOREIGN KEY(product_id)
-        REFERENCES product(ID)
-  );
-  
-  CREATE TABLE photos (
-    ID INTEGER PRIMARY KEY,
-    styleID INTEGER NOT NULL,
-    url VARCHAR NOT NULL,
-    thumbnail_url VARCHAR NOT NULL,
-    CONSTRAINT fk_styles
-      FOREIGN KEY(styleID)
-        REFERENCES styles(ID)
-  );
-  ```
   ###COPY DATA TO TABLES
   ```
   COPY product(id, name, slogan, description, category, default_price)
