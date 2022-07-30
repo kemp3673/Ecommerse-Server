@@ -89,5 +89,10 @@ COPY features(id, product_Id, feature, value)
   CSV HEADER;
 
 
+CREATE INDEX styles_id ON styles (productid);
+CREATE INDEX skus_index  ON skus (styleid);
+CREATE INDEX photos_index  ON photos (styleid);
+CREATE INDEX features_index  ON features (product_id);
+
 
 
