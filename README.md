@@ -7,6 +7,7 @@ Server side and Database system creation for Hack Reactors SDC sprint. This repo
 
 ```bash
 brew install postgressql
+
 ```
 Navigate into main repo folder
 ```
@@ -21,6 +22,8 @@ Axios, ESLint, Express, Nodemon, PG, Underscore
 
 ```bash
 brew services start postgresql    // To Start PostgreSQL 
+
+sudo service postgresql start.    // Linux 
 
 psql postgres    // Enter shell 
 
