@@ -1,4 +1,4 @@
-const pool = require('../postgreSQL/db.js');
+const pool = require('../postgreSQL/db.js'); //Change to URL later
 
 
 module.exports = {

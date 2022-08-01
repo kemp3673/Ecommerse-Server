@@ -1,13 +1,21 @@
 const newrelic = require('newrelic');
 const express = require("express");
+const cors = require('cors');
 const path = require("path");
 const queries = require("../postgreSQL/db.js");
 const controllers = require('./controllers.js');
+const compression = require('compression');
+
 
 const app = express();
 
+// Middleware
+app.use(cors({
+  origin: '*',
+  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client/public')));
+//app.use(compression());
 
 //define routes
 app.get("/products", controllers.getList);

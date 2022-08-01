@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 DROP DATABASE IF EXISTS products;
+CREATE USER {process.env.DB_USER} SUPERUSER WITH PASSWORD {process.env.DB_PASSWORD};
 
 CREATE DATABASE products;
 
@@ -88,6 +89,11 @@ COPY features(id, product_Id, feature, value)
   DELIMITER ','
   CSV HEADER;
 
+
+CREATE INDEX styles_id ON styles (productid);
+CREATE INDEX skus_index  ON skus (styleid);
+CREATE INDEX photos_index  ON photos (styleid);
+CREATE INDEX features_index  ON features (product_id);
 
 
 
