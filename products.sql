@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 DROP DATABASE IF EXISTS products;
+CREATE USER {process.env.DB_USER} SUPERUSER WITH PASSWORD {process.env.DB_PASSWORD};
 
 CREATE DATABASE products;
 
