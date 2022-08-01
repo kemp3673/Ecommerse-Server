@@ -40,6 +40,8 @@ $ brew install postgres
 ```
 \list  // Displays table of DBs
 
+\du // Displays users and roles
+
 \c dbname    // change DB
 
 \dt    // Displays tables in DB
