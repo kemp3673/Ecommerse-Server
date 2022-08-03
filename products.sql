@@ -1,9 +1,6 @@
 require("dotenv").config();
 
-DROP DATABASE IF EXISTS products;
-CREATE USER {process.env.DB_USER} SUPERUSER WITH PASSWORD {process.env.DB_PASSWORD};
-
-CREATE DATABASE products;
+CREATE DATABASE IF NOT EXISTS products;
 
 \c products;
 
@@ -64,7 +61,7 @@ CREATE TABLE product (
 -- ETL --
 
 COPY product(id, name, slogan, description, category, default_price)
-  FROM '/Users/nicholaskempkes/repositories/Server Design Capstone/Product-Overview/csv_files/product.csv'
+  FROM '/Users/nicholaskempkes/repositories/Server Design Capstone/Product-Overview/csv_files/products.csv'
   DELIMITER ','
   CSV HEADER;
 
