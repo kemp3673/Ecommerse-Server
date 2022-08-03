@@ -4,7 +4,7 @@ import { check, sleep } from 'k6';
 
 export const options = {
   vus: 100,
-  duration: '5m'
+  duration: '10m'
 }
 
 const url_list = 'http://127.0.0.1:3000/products?count=10&page=500';
@@ -54,29 +54,29 @@ export default function() {
 //   stages: [
 //     { duration: '2m', target: 100 }, // below normal load
 //     { duration: '2m', target: 100 },
-//     { duration: '2m', target: 200 }, // normal load
+//     { duration: '5m', target: 200 }, // normal load
 //     { duration: '2m', target: 200 },
-//     { duration: '30s', target: 300 }, // around the breaking point
-//     { duration: '1m', target: 300 },
-//     { duration: '15s', target: 400 }, // beyond the breaking point
-//     { duration: '45s', target: 400 },
+//     { duration: '1m', target: 300 }, // around the breaking point
+//     { duration: '2m', target: 300 },
+//     { duration: '2m', target: 400 }, // beyond the breaking point
+//     { duration: '2m', target: 400 },
 //     { duration: '2m', target: 0 }, // scale down. Recovery stage.
 //   ],
 // };
 
-// // const url_list = 'http://127.0.0.1:3000/products?count=10&page=500';
-// // const url_indv = 'http://127.0.0.1:3000/products/999950';
-// // const url_style = 'http://127.0.0.1:3000/products/50/styles';
-// // const url_client = 'http://127.0.0.1:3001';
+// const url_list = 'http://127.0.0.1:3000/products?count=10&page=500';
+// const url_indv = 'http://127.0.0.1:3000/products/999950';
+// const url_style = 'http://127.0.0.1:3000/products/50/styles';
+// const url_client = 'http://127.0.0.1:3001';
 
 // export default function () {
-//   const BASE_URL = 'http://127.0.0.1:3000/products?count=10&page=500'; // make sure this is not production
+//   const BASE_URL = 'http://127.0.0.1:3000'; // make sure this is not production
 
 //   const responses = http.batch([
 //     ['GET', `${BASE_URL}/products`, null, { tags: { name: 'PublicCrocs' } }],
-//     ['GET', `${BASE_URL}/products/:productID`, null, { tags: { name: 'PublicCrocs' } }],
-//     ['GET', `${BASE_URL}//products/:productID/styles`, null, { tags: { name: 'PublicCrocs' } }],
+//     ['GET', `${BASE_URL}/products/65423`, null, { tags: { name: 'PublicCrocs' } }],
+//     ['GET', `${BASE_URL}/products/65423/styles`, null, { tags: { name: 'PublicCrocs' } }],
 //   ]);
 
-//   sleep(1);
-// }
+  //sleep(1);
+}
