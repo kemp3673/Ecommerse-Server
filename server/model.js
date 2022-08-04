@@ -33,6 +33,8 @@ module.exports = {
       WHERE product.id = ${productID};`)
     },
 
+      // With sales price, try ISNULL (column, newvalue) to replace the nulls with 0
+      //COALESCE(styles.sale_price, "0") AS sale_price (not working)
   styles: (productID) => {
     return pool.query(
       `SELECT

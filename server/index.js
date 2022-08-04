@@ -15,12 +15,20 @@ app.use(cors({
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 app.use(express.json());
-//app.use(compression());
 
 //define routes
 app.get("/products", controllers.getList);
 app.get("/products/:productID", controllers.getOne);
 app.get("/products/:productID/styles", controllers.getStyles);
+
+
+
+
+// loader.io
+app.get("/loaderio-b10daa155f82ece04bcb773ca5a5720d.txt", function(req, res) {
+  res.sendFile(path.join(__dirname, '../../loaderio-b10daa155f82ece04bcb773ca5a5720d.txt'));
+});
+
 
 //define port
 const PORT = process.env.PORT || 3000;
