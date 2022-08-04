@@ -26,7 +26,7 @@ app.get("/products/:productID/styles", controllers.getStyles);
 
 // loader.io
 app.get("/loaderio-b10daa155f82ece04bcb773ca5a5720d.txt", function(req, res) {
-  res.sendFile(path.join(__dirname, '../../loaderio-b10daa155f82ece04bcb773ca5a5720d.txt'));
+  res.sendFile(path.join(__dirname, '../loaderio-b10daa155f82ece04bcb773ca5a5720d.txt'));
 });
 
 
