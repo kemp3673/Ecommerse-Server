@@ -1,4 +1,6 @@
 # Product-Overview
+Simulated service to implement Express server and PostgreSQL database that is meant to take in legacy data from previous datbase. Application is meant to replace previous database and handle a greate traffic flow. Current deployed database can handle roughly 1800 request per second before any type of scaling is implemented. 
+
 Server side and Database system creation for Hack Reactors SDC sprint. This repository is one part of the entire system and utilizes other repos.
 
 [Project Atelier System Design Main Repo](https://github.com/Project-Atelier-System-Design "Project-Atelier-System-Design")
@@ -57,28 +59,4 @@ SELECT * FROM product;  // Displays all contents of specified (product) table
 ```
 
 
-[I'm an inline-style link](https://www.google.com)
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-
-
-1. First ordered list item
-2. Another item
-⋅⋅* Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
-
-
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
