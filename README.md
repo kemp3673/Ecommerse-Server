@@ -1,5 +1,5 @@
 # Product-Overview
-Simulated service to implement Express server and PostgreSQL database that is meant to take in legacy data from previous datbase. Application is meant to replace previous database and handle a greate traffic flow. Current deployed database can handle roughly 1800 request per second before any type of scaling is implemented. 
+Simulated service to implement Express server and PostgreSQL database that is meant to take in legacy data from previous datbase. Application is meant to replace previous database and handle a greate traffic flow. Current deployed database on an AWS micro t.2 can handle roughly 1800 request per second before any type of scaling is implemented. 
 
 Server side and Database system creation for Hack Reactors SDC sprint. This repository is one part of the entire system and utilizes other repos.
 
