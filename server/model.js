@@ -55,7 +55,7 @@ module.exports = {
                 ) item
               ) AS photos,
         (SELECT
-          json_object_agg(
+          json_object_agg(                        
             skus.id, JSON_build_object(
               'quantity', skus.quantity,
               'size', skus.size
